@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const OPENROUTER_KEY = "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";
+  const OPENROUTER_KEY = process.env.OPENROUTER_KEY;
 
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
